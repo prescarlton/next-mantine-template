@@ -1,95 +1,115 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import Image from 'next/image'
+import classes from './page.module.scss'
+import { Card, Grid, GridCol, Group, Text, Title } from '@mantine/core'
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
+    <main className={classes.main}>
+      <Card className={classes.description} withBorder radius="lg" shadow="sm">
+        <Text size="sm">
           Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+          <code className={classes.code}>src/app/page.tsx</code>
+        </Text>
+      </Card>
 
-      <div className={styles.center}>
+      <Group className={classes.center}>
         <Image
-          className={styles.logo}
+          className={classes.logo}
           src="/next.svg"
           alt="Next.js Logo"
           width={180}
           height={37}
           priority
         />
-      </div>
+        <Title size="h1">/</Title>
+        <Image
+          className={classes.logo}
+          src="/mantine.svg"
+          alt="Mantine Logo"
+          width={180}
+          height={37}
+          priority
+        />
+      </Group>
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
+      <Grid>
+        <GridCol span={{ xs: 12, md: 3 }}>
+          <Card
+            withBorder
+            shadow="sm"
+            radius="md"
+            component="a"
+            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={classes.card}
+          >
+            <Title size="h2">
+              Next.js Docs <span>-&gt;</span>
+            </Title>
+            <Text>
+              Find in-depth information about Next.js features and API.
+            </Text>
+          </Card>
+        </GridCol>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
+        <GridCol span={{ xs: 12, md: 3 }}>
+          <Card
+            withBorder
+            shadow="sm"
+            radius="md"
+            component="a"
+            href="https://mantine.dev/getting-started/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={classes.card}
+          >
+            <Title size="h2">
+              Mantine Docs <span>-&gt;</span>
+            </Title>
+            <Text>
+              Read more about Mantine and all the components it offers.
+            </Text>
+          </Card>
+        </GridCol>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+        <GridCol span={{ xs: 12, md: 3 }}>
+          <Card
+            withBorder
+            shadow="sm"
+            radius="md"
+            component="a"
+            href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={classes.card}
+          >
+            <Title size="h2">
+              Templates <span>-&gt;</span>
+            </Title>
+            <Text>Explore starter templates for Next.js.</Text>
+          </Card>
+        </GridCol>
+        <GridCol span={{ xs: 12, md: 3 }}>
+          <Card
+            withBorder
+            shadow="sm"
+            radius="md"
+            component="a"
+            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={classes.card}
+          >
+            <Title size="h2">
+              Deploy <span>-&gt;</span>
+            </Title>
+            <Text>
+              Instantly deploy your Next.js site to a shareable URL with Vercel.
+            </Text>
+          </Card>
+        </GridCol>
+      </Grid>
     </main>
-  );
+  )
 }
